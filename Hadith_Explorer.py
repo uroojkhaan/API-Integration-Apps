@@ -27,7 +27,7 @@ def get_chapters(bookslug) :
     print("Response:", response.text)
 
     if response.status_code == 200:
-        chapters = response.json().get('chapters'),[]
+        chapters = response.json().get('chapters',[])
         for chapter in chapters :
             print(f"Chapter {chapter['chapterNumber']}: {chapter['chapterEnglish']} (Urdu: {chapter['chapterUrdu']})")
 
