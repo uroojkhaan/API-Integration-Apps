@@ -18,7 +18,7 @@ def list_hadiths_books():
         for book in books :
             print(f"{book['bookSlug']}-{book['bookName']} | Chapters: {book['chapters_count']} | Hadiths :{book['hadiths_count']}")
     else:
-            print("⚠️ Error fetching books. Check your API key or internet connection.")
+            print(" Error fetching books. Check your API key or internet connection.")
 
 def get_chapters(bookslug) :
     url = f"{base_url}/{bookslug}/chapters?apiKey={api_key}"
@@ -32,7 +32,7 @@ def get_chapters(bookslug) :
             print(f"Chapter {chapter['chapterNumber']}: {chapter['chapterEnglish']} (Urdu: {chapter['chapterUrdu']})")
 
     else:
-        print("⚠️ Error fetching chapters. Check the bookSlug or internet.")
+        print(" Error fetching chapters. Check the bookSlug or internet.")
 
 
 def get_hadiths(bookslug, chapter):
@@ -47,7 +47,7 @@ def get_hadiths(bookslug, chapter):
         for hadith in hadiths:
             print(f"Hadith #{hadith['hadithNumber']}: {hadith['hadithEnglish']}")
     else:
-        print("⚠️ Error fetching hadiths. Check the chapter number or bookSlug.")
+        print(" Error fetching hadiths. Check the chapter number or bookSlug.")
 
 def main():
     while True:
